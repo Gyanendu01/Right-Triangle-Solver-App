@@ -12,7 +12,7 @@ def usr_input():
     return frst_leg, scnd_leg, usr_name
 
 def traingle_solve(frst_leg,scnd_leg,name):
-    print("\n\tHello, {} Here is the desired solution")
+    print("\n\tHello, {} Here is the desired solution".format(name))
     time.sleep(1)
 
     # Logic to find the hypotenus of the traingle with given data
@@ -26,3 +26,14 @@ def traingle_solve(frst_leg,scnd_leg,name):
     
 usr_data = usr_input()
 traingle_solve(usr_data[0],usr_data[1],usr_data[2])
+
+# Allows the users to run the program as many times as they want
+while True:
+    print("\t","*"*55)
+    condn = input("\n\tDo you want to continue using the application (y/n): ")
+    if condn.lower() == 'y':
+        usr_data = usr_input()
+        traingle_solve(usr_data[0],usr_data[1],usr_data[2])
+    else:
+        print("\n\tThank you!")
+        break
